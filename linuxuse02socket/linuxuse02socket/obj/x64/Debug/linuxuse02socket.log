@@ -1,0 +1,12 @@
+﻿  正在验证源
+  正在将源远程复制到“192.168.174.128”
+  正在验证体系结构
+  正在验证体系结构
+  正在启动远程生成
+  正在编译源:
+  main.cpp
+C:\Users\86181\source\repos\linuxuse02socket\linuxuse02socket\main.cpp(23,28): warning : value computed is not used [-Wunused-value]
+C:\Users\86181\source\repos\linuxuse02socket\linuxuse02socket\main.cpp(23,28): warning :    23 |  serv_addr.sin_addr.s_addr - inet_addr("120.0.0.1");
+C:\Users\86181\source\repos\linuxuse02socket\linuxuse02socket\main.cpp(23,28): warning :       |  ~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~
+  正在链接对象
+  linuxuse02socket.vcxproj -> C:\Users\86181\source\repos\linuxuse02socket\linuxuse02socket\bin\x64\Debug\linuxuse02socket.out
