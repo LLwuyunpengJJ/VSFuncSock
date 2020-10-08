@@ -1,0 +1,1 @@
+g++ -o "/home/vs/projects/linuxuse01/bin/x64/Debug/linuxuse01.out" -Wl,--no-undefined -Wl,-z,relro -Wl,-z,now -Wl,-z,noexecstack /home/vs/projects/linuxuse01/obj/x64/Debug/main.o
