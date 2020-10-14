@@ -4,8 +4,15 @@
 #include <unistd.h>
 #include <arpa/inet.h>
 #include <sys/socket.h>
-
+int socket_test(void);
 int main() {
+	while(1){
+		socket_test();
+		sleep(1);
+	}
+}
+int cnt = 1;
+int socket_test(void) {
 	int err = 0;
 	//创建套接字
 	int client = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
@@ -22,30 +29,27 @@ int main() {
 
 	//连接
 	err = connect(client, (struct sockaddr*)&client_addr, sizeof(client_addr));
-
-	if (err == 0)
-	{
+	if (err == 0) {
 		printf("client : connect to server\n");
 	}
-	else
-	{
+	else {
 		printf("client : connect error\n");
 		return -1;
 	}
 	printf("connect!\r\n");
-	int cnt = 0;
+	//读取服务器传回的数据
+	char buffer[40] = { 0 };
+	read(client, buffer, sizeof(buffer) - 1);
+	printf(">>%d<<Message form server: %s\n", cnt, buffer);
 
-	while (1) {
-		//读取服务器传回的数据
-		char buffer[40] = { 0 };
-		while (read(client, buffer, sizeof(buffer) - 1) <= 0);//阻塞
-		printf(">>%d<<Message form server: %s\n", cnt++, buffer);
-		usleep(1000000);
-	}
+	/* 发送数据给服务器 */
+	char str[200] = { 0 };
+	sprintf(str, "这是客户端第%d条数据", cnt);
+	write(client, str, strlen(str));
+	printf("写入%d个\r\n", cnt);
+
+	cnt++;
 	close(client);
 	return 0;
 }
-
-
-
 

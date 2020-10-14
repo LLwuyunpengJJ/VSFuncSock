@@ -1,0 +1,1 @@
+g++ -o "/home/vs/projects/linuxuse02socket/Source/Repos/LLwuyunpengJJ/VSFuncSock/linuxuse02socket/linuxuse02socket/bin/ARM/Debug/linuxuse02socket.out" -Wl,--no-undefined -Wl,-z,relro -Wl,-z,now -Wl,-z,noexecstack /home/vs/projects/linuxuse02socket/Source/Repos/LLwuyunpengJJ/VSFuncSock/linuxuse02socket/linuxuse02socket/obj/ARM/Debug/main.o
